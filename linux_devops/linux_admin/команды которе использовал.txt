@@ -1,0 +1,51 @@
+sudo hostnamectl set-hostname user-1
+sudo timedatectl set-timezone Asia/Yekaterinburg
+ip link show
+это виртуальный интерфейс для внутренней коммуникации сервера "сам с собой". Он нужен для работы localhost.
+DHCP (протокол динамической конфигурации хоста) — это протокол, который автоматически назначает IP-адрес и другие сетевые параметры этим интерфейсам для работы в сети.
+ествия:
+1 задал название машины с помощью команды sudo hostnamectl set-hostname user-1 после этого перезагузил для принятия изменений
+2 установил временную зону с помощью команды sudo timedatectl set-timezone Asia/Yekaterinburg и проверил с помощью timedatectl
+3 с помощью ip link show вывел названия сетевых интерфейсов(io внутренний, enp0s3 внкшний)
+4 получил ip от DHCP с помощью команды sudo dhclient -v enp0s3
+5 с помощью команд ip route show default и curl ifconfig.me вывел ip и gw
+6 для установки вручную открыл с помощью nano файл 00-installer-config.yaml затем отредактировал его
+7. перезагрузил и проверил с помощью команды systemd-resolve --status произошли ли изменения
+part 7
+save
+vim - :wq
+nano - cntrl + O
+mc - f2
+exit not save 
+vim :q!
+nano - cntrl + x
+mc - f10
+part 9
+uptime 28 min
+users 1
+load 0.01 0.02 0.02
+total 92
+cpu 0.0 us, 0.0 sy, 0.0. ni , 100.0 id, 0.0 wa, 0.0 hi, 0.0 si 0.0 st
+memory 149 swap 0
+snapd 626
+newuser 1007  0.3
+парт 10
+название VBOX HARDDISK
+азмер 25 гиг
+секторы 52428800
+swap 4gb
+part 11
+Размер раздела	256423780K
+Занятое пространство	7196868K
+Свободное пространство	17099964K
+Процент использования	30%
+Единица измерения	1K-блоки (килобайты)
+df -th
+Размер раздела	25 GB
+Занятое пространство	6.9 GB
+Свободное пространство	17 GB
+Процент использования	30%
+Единица измерения	мегабайт гигиабайты
+парт 12
+part 14
+28 октября 13:54:45 newuser консольный вход
